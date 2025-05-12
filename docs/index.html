@@ -1,1 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Polymerase Family Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DNA Polymerase Family Classifier</h1>
+        
+        <div class="input-section">
+            <h2>Input Protein Sequence</h2>
+            <textarea id="sequence-input" placeholder="Enter protein sequence or FASTA format..."></textarea>
+            <p class="example">Example: <span>MAKLTDF...</span></p>
+            
+            <div class="buttons">
+                <button id="predict-btn">Predict Family</button>
+                <input type="file" id="fasta-upload" accept=".fasta,.fa">
+                <label for="fasta-upload" class="upload-btn">Upload FASTA</label>
+            </div>
+        </div>
+        
+        <div id="results" class="hidden">
+            <h2>Prediction Results</h2>
+            <div id="prediction-output"></div>
+            <div id="probabilities-chart"></div>
+            <button id="download-btn">Download Results</button>
+        </div>
+        
+        <div class="footer">
+            <p>Model: ProtBERT + SVM | Accuracy: 92% (test set)</p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
